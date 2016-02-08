@@ -19,8 +19,8 @@ echo "========================================================================="
 cur_dir=$(pwd)
 
 # set params
-mysqlrootpwd="qazwsx123456"
-installinnodb="n"
+mysqlrootpwd="LNMP123"
+installinnodb="y"
 isinstallphp53="y"
 isinstallmysql55="y"
 
