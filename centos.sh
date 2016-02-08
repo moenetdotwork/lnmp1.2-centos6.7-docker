@@ -27,11 +27,11 @@ isinstallmysql55="y"
 #set mysql root password
 	echo "==========================="
 
-	mysqlrootpwd="root"
+	mysqlrootpwd="LNMP123"
 	echo "Please input the root password of mysql:"
 	#read -p "(Default password: root):" mysqlrootpwd
 	if [ "$mysqlrootpwd" = "" ]; then
-		mysqlrootpwd="root"
+		mysqlrootpwd="LNMP123"
 	fi
 	echo "==========================="
 	echo "MySQL root password:$mysqlrootpwd"
@@ -40,7 +40,7 @@ isinstallmysql55="y"
 #do you want to install the InnoDB Storage Engine?
 echo "==========================="
 
-	installinnodb="n"
+	installinnodb="y"
 	echo "Do you want to install the InnoDB Storage Engine?"
 	#read -p "(Default no,if you want please input: y ,if not please press the enter button):" installinnodb
 
