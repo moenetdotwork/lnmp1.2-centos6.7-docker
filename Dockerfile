@@ -38,6 +38,7 @@ COPY centos.sh /root/centos.sh
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz && \
     cd /root/lnmp1.2-full && \
     yes | cp -fr /root/centos.sh ./ && \
+    chmod +x /root/centos.sh && \
     ./centos.sh
 
 ADD set_root_pw.sh /set_root_pw.sh
