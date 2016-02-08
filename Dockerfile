@@ -31,14 +31,18 @@ RUN yum -y install openssh-server && \
 # Install wget tar screen htop passwd nano packages
 RUN yum -y install wget tar screen htop passwd nano
 
-# copy scripts
-COPY scripts /root/scripts
+# Copy centos.sh
+COPY centos.sh /root/centos.sh
 
 # Download and install lnmp1.2.
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz && \
     cd /root/lnmp1.2-full && \
-    yes | cp -fr /root/scripts/centos.sh ./ && \
+    yes | cp -fr /root/centos.sh ./ && \
     ./centos.sh
+
+ADD set_root_pw.sh /set_root_pw.sh
+ADD run.sh /run.sh
+RUN chmod +x /*.sh
 
 ENV AUTHORIZED_KEYS **None**
 ENV ROOT_PASS LNMP123
@@ -46,4 +50,4 @@ ENV ROOT_PASS LNMP123
 VOLUME ["/home"]
 
 EXPOSE 80 21 22 3306 6379 11211
-CMD ["supervisord", "-n"]
+CMD ["/run.sh"]

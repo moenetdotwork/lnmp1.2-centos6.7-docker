@@ -1,4 +1,0 @@
-[program:php5-fpm-log]
-command=tail -f /var/log/php5-fpm.log
-stdout_events_enabled=true
-stderr_events_enabled=true
