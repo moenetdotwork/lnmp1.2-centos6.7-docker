@@ -21,15 +21,9 @@ RUN yum -y install tar
 # copy scripts
 COPY scripts /root/scripts
 
-# download and install lnmp
-# wget https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.1-full.tar.gz --no-check-certificate
-#RUN curl -L http://soft.vpser.net/lnmp/lnmp1.1-full.tar.gz | tar -C / -xz && \
-#    cd /lnmp1.1-full && \
-#    yes | cp -fr /root/scripts/centos.sh ./ && \
-#    ./centos.sh
-COPY lnmp1.1-full.tar.gz /
-RUN cd / && tar -xzf lnmp1.1-full.tar.gz && \
-    cd /lnmp1.1-full && \
+# Download and install lnmp1.2.
+RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
+    cd /lnmp1.2-full && \
     yes | cp -fr /root/scripts/centos.sh ./ && \
     ./centos.sh
 
@@ -39,5 +33,5 @@ RUN yum -y install python-pip && pip install supervisor && \
     mkdir /etc/supervisord.conf.d && \
     cp -fr /root/scripts/supervisord.conf.d/* /etc/supervisord.conf.d/
 
-EXPOSE 80
+EXPOSE 80 21 22 3306 6379 11211
 CMD ["supervisord", "-n"]
