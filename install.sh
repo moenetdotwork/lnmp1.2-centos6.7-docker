@@ -120,71 +120,12 @@ LNMP_Stack()
     Check_LNMP_Install
 }
 
-LNMPA_Stack()
-{
-    Apache_Selection
-    Init_Install
-    if [ "${ApacheSelect}" = "1" ]; then
-        Install_Apache_22
-    else
-        Install_Apache_24
-    fi
-    if [ "${PHPSelect}" = "1" ]; then
-        Install_PHP_52
-    elif [ "${PHPSelect}" = "2" ]; then
-        Install_PHP_53
-    elif [ "${PHPSelect}" = "3" ]; then
-        Install_PHP_54
-    elif [ "${PHPSelect}" = "4" ]; then
-        Install_PHP_55
-    elif [ "${PHPSelect}" = "5" ]; then
-        Install_PHP_56
-    fi
-    Install_Nginx
-    Creat_PHP_Tools
-    Add_LNMPA_Startup
-    Check_LNMPA_Install
-}
-
-LAMP_Stack()
-{
-    Apache_Selection
-    Init_Install
-    if [ "${ApacheSelect}" = "1" ]; then
-        Install_Apache_22
-    else
-        Install_Apache_24
-    fi    
-    if [ "${PHPSelect}" = "1" ]; then
-        Install_PHP_52
-    elif [ "${PHPSelect}" = "2" ]; then
-        Install_PHP_53
-    elif [ "${PHPSelect}" = "3" ]; then
-        Install_PHP_54
-    elif [ "${PHPSelect}" = "4" ]; then
-        Install_PHP_55
-    elif [ "${PHPSelect}" = "5" ]; then
-        Install_PHP_56
-    fi
-    Creat_PHP_Tools
-    Add_LAMP_Startup
-    Check_LAMP_Install
-}
-
 case "${Stack}" in
     lnmp)
         Dispaly_Selection
         LNMP_Stack 2>&1 | tee -a /root/lnmp-install.log
         ;;
-    lnmpa)
-        Dispaly_Selection
-        LNMPA_Stack 2>&1 | tee -a /root/lnmp-install.log
-        ;;
-    lamp)
-        Dispaly_Selection
-        LAMP_Stack 2>&1 | tee -a /root/lnmp-install.log
-        ;;
     *)
-        Echo_Red "Usage: $0 {lnmp|lnmpa|lamp}"
+        Echo_Red "Usage: $0 {lnmp}"
         ;;
 esac
