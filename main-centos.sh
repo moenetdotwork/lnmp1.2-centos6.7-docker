@@ -4,11 +4,11 @@ Dispaly_Selection()
 {
 #set mysql root password
 
-    MysqlRootPWD="root"
+    MysqlRootPWD="LNMP123"
     Echo_Yellow "Please setup root password of MySQL.(Default password: root)"
-    read -p "Please enter: " MysqlRootPWD
+    #read -p "Please enter: " MysqlRootPWD
     if [ "${MysqlRootPWD}" = "" ]; then
-        MysqlRootPWD="root"
+        MysqlRootPWD="LNMP123"
     fi
     echo "MySQL root password: ${MysqlRootPWD}"
 
@@ -17,7 +17,7 @@ Dispaly_Selection()
 
     InstallInnodb="y"
     Echo_Yellow "Do you want to enable or disable the InnoDB Storage Engine?"
-    read -p "Default enable,Enter your choice [Y/n]: " InstallInnodb
+    #read -p "Default enable,Enter your choice [Y/n]: " InstallInnodb
 
     case "${InstallInnodb}" in
     [yY][eE][sS]|[yY])
