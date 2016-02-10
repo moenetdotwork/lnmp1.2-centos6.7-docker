@@ -41,7 +41,7 @@ Dispaly_Selection()
     echo "3: Install MySQL 5.6.23"
     echo "4: Install MariaDB 5.5.42"
     echo "5: Install MariaDB 10.0.17"
-    read -p "Enter your choice (1, 2, 3, 4 or 5): " DBSelect
+    #read -p "Enter your choice (1, 2, 3, 4 or 5): " DBSelect
 
     case "${DBSelect}" in
     1)
@@ -77,14 +77,14 @@ Dispaly_Selection()
 #which PHP Version do you want to install?
     echo "==========================="
 
-    PHPSelect="3"
+    PHPSelect="5"
     Echo_Yellow "You have 5 options for your PHP install."
     echo "1: Install PHP 5.2.17"
     echo "2: Install PHP 5.3.29"
     echo "3: Install PHP 5.4.41 (Default)"
     echo "4: Install PHP 5.5.25"
     echo "5: Install PHP 5.6.9"
-    read -p "Enter your choice (1, 2, 3, 4 or 5): " PHPSelect
+    #read -p "Enter your choice (1, 2, 3, 4 or 5): " PHPSelect
 
     case "${PHPSelect}" in
     1)
@@ -115,7 +115,7 @@ Dispaly_Selection()
     echo "1: Don't install Memory Allocator. (Default)"
     echo "2: Install Jemalloc"
     echo "3: Install TCMalloc"
-    read -p "Enter your choice (1, 2 or 3): " SelectMalloc
+    #read -p "Enter your choice (1, 2 or 3): " SelectMalloc
 
     case "${SelectMalloc}" in
     1)
