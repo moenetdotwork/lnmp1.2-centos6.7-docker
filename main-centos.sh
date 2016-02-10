@@ -104,7 +104,7 @@ Dispaly_Selection()
     ;;
     *)
         echo "No input,You will install PHP 5.4.41"
-        PHPSelect="3"
+        PHPSelect="5"
     esac
 
 #which Memory Allocator do you want to install?
@@ -183,16 +183,16 @@ Apache_Selection()
     fi
 }
 
-Press_Install()
-{
-    echo ""
-    echo "Press any key to install...or Press Ctrl+c to cancel"
-    OLDCONFIG=`stty -g`
-    stty -icanon -echo min 1 time 0
-    dd count=1 2>/dev/null
-    stty ${OLDCONFIG}
+#Press_Install()
+# {
+#    echo ""
+#    echo "Press any key to install...or Press Ctrl+c to cancel"
+#     OLDCONFIG=`stty -g`
+#     stty -icanon -echo min 1 time 0
+#     dd count=1 2>/dev/null
+#     stty ${OLDCONFIG}
     . include/version.sh
-}
+#}
 
 Press_Start()
 {
