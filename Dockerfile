@@ -35,7 +35,9 @@ RUN yum -y install wget tar screen htop passwd nano
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
 
 ADD centos.sh /root/lnmp1.2-full/centos.sh
+ADD main-centos.sh /root/lnmp1.2-full/include/main-centos.sh
 RUN chmod +x /root/lnmp1.2-full/centos.sh
+Run chmod +x /root/lnmp1.2-full/include/main-centos.sh
 RUN cd /root/lnmp1.2-full && \   
     ./centos.sh
 
