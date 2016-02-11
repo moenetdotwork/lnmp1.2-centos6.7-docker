@@ -15,6 +15,10 @@ Mysql root password: LNMP123
 
 After login SSH, run lnmp start
 
+Docker运行命令示例：
+
+docker run --restart=always -e VIRTUAL_HOST=test1.test.com -P -ti --name LNMP registry.aliyuncs.com/max/lnmp1.2-centos6.7-docker ./run.sh
+
 ## 一、Centos：
 可以设置SSH登陆密码**ROOT_PASS**变量
 
