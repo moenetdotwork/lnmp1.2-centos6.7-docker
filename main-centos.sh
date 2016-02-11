@@ -188,7 +188,7 @@ Apache_Selection()
     stty -icanon -echo min 1 time 0
     #dd count=1 2>/dev/null
     stty ${OLDCONFIG}
-    . include/version.sh
+    . include/version-centos.sh
 
 
 Press_Start()
