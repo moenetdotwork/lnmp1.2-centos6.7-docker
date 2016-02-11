@@ -26,7 +26,7 @@ After login SSH, run lnmp start
 
 ## 二、采用官网的lnmp一键包(lnmp.org)
 ### 1)连接SSH后，运行lnmp start
-### 2)无需再次安装
+### 2)集成lnmp1.2,无需再次安装
 
 ## 三、其他相关
 直接上官网的教程，这里就不再讲太多了，官网讲得详细。
