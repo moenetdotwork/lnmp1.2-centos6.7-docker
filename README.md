@@ -3,7 +3,7 @@ lnmp1.2( Linux, nginx, mysql, php ) centos6.7 for docker file, more details chec
 
 CentOS verison: 6.7
 
-Nginx version: 1.8.1
+Nginx version: 1.8.0
 
 Mysql verison: 5.5
 
