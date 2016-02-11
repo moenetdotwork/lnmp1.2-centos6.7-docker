@@ -108,7 +108,7 @@ LNMP_Stack()
     elif [ "${PHPSelect}" = "2" ]; then
         Install_PHP_53
     elif [ "${PHPSelect}" = "3" ]; then
-        Install_PHP_54
+        Install_PHP_56
     elif [ "${PHPSelect}" = "4" ]; then
         Install_PHP_55
     elif [ "${PHPSelect}" = "5" ]; then

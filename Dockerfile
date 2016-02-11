@@ -34,6 +34,8 @@ RUN yum -y install wget tar screen htop passwd nano
 # Download and install lnmp1.2.
 RUN wget -c https://api.sinas3.com/v1/SAE_lnmp/soft/lnmp1.2-full.tar.gz --no-check-certificate && tar zxf lnmp1.2-full.tar.gz -C root && rm -rf lnmp1.2-full.tar.gz
 
+ADD nginx-1.8.1.tar.gz /root/lnmp1.2-full/src/nginx-1.8.1.tar.gz
+ADD php-5.6.18.tar.gz /root/lnmp1.2-full/src/php-5.6.18.tar.gz
 ADD centos.sh /root/lnmp1.2-full/centos.sh
 ADD main-centos.sh /root/lnmp1.2-full/include/main-centos.sh
 ADD version-centos.sh /root/lnmp1.2-full/include/version-centos.sh
