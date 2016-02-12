@@ -18,7 +18,7 @@ ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
 ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
 
 # Update
-# RUN yum -y update
+RUN yum -y update
 
 RUN yum -y install openssh-server && \
     yum -y install pwgen && \
@@ -54,5 +54,5 @@ ENV ROOT_PASS LNMP123
 VOLUME ["/home"]
 
 EXPOSE 80 21 22 3306 6379 11211
-CMD ["/run.sh"]
 ENTRYPOINT lnmp start
+CMD ["/run.sh"]
