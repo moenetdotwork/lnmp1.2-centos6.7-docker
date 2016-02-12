@@ -1,6 +1,6 @@
 #
 # MAINTAINER        Max
-# DOCKER-VERSION    1.1.10
+# DOCKER-VERSION    1.10
 # CENTOS-VERSION    6.7
 # LNMP-VERSION      1.2 www.lnmp.org
 # VERSION           1.0
