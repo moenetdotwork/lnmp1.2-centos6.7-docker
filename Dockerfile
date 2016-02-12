@@ -55,4 +55,5 @@ VOLUME ["/home"]
 
 EXPOSE 80 21 22 3306 6379 11211
 #ENTRYPOINT lnmp start
-CMD ["/run.sh"]
+#CMD ["/run.sh"]
+CMD lnmp start
